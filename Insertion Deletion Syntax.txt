@@ -1,0 +1,13 @@
+insert into customer_table values
+(1,'bee','cee',32,'bc@xyz.com');
+
+insert into customer_table (cust_id,first_name,age,email_id) values
+(2,'dee',32,'d@xyz.com');
+
+insert into customer_table values
+(3,'eee','fff',33,'as@xyz.com'),
+(4,'dcs','sss',55,'ds@xyz.com'); 
+
+copy customer_table from 'F:\PostgreSQL\Files\original.csv' delimiter ',' csv header;
+
+copy customer_table from 'F:\PostgreSQL\Files\original.txt' delimiter ',';

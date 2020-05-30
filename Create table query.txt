@@ -1,0 +1,17 @@
+CREATE TABLE “table_name”(
+“column 1“ "data type for column 1" [column 1 constraint(s)],
+“column 2“ "data type for column 2" [column 2 constraint(s)],
+...
+“column n “
+[table constraint(s)] );
+
+
+
+NOT NULL Constraint: Ensures that a column cannot have NULL value.
+➢ DEFAULT Constraint: Provides a default value for a column when none is
+specified.
+➢ UNIQUE Constraint: Ensures that all values in a column are different.
+➢ CHECK Constraint: Makes sure that all values in a column satisfy certain
+criteria.
+➢ Primary Key Constraint: Used to uniquely identify a row in the table.
+➢ Foreign Key Constraint: Used to ensure referential integrity of the data.

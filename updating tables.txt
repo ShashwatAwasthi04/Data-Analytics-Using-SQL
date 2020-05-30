@@ -1,0 +1,3 @@
+update customer_table set lat_name='pee' ,age=17 where cust_id=2;
+
+update customer_table set email_id='gee@xyz.com' where first_name='gee' or first_name='Gee';

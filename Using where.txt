@@ -1,2 +1,14 @@
-/*select distinct first_name from customer_table where age=25;*/
+/*
+Retrieving using single condition
+
+select distinct first_name from customer_table where age=25;*/
 select distinct first_name from customer_table where age>25;
+select distinct first_name,age from customer_table where age>20;
+
+retrieving using multiple conditions(Logical Operators)
+
+select first_name, lat_name ,age from customer_table where age>20 and age<30;
+
+select first_name, lat_name ,age from customer_table where age<20 or age>30;
+
+select * from customer_table where not age=25;

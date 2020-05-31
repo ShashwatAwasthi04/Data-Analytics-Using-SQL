@@ -1,0 +1,12 @@
+alter table customer_table 
+alter column cust_id set not null;/* Adding constraint*/
+
+alter table customer_table 
+alter column cust_id drop not null;/* Removing constraint*/
+
+
+alter table customer_table 
+add constraint cust_id check (cust_id>0);/*A check on value being entered */
+
+alter table customer_table
+add primary key (cust_id);/* Making a column a primary key(beware no null values)*/

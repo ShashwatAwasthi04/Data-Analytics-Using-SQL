@@ -1,0 +1,57 @@
+/*In condition help reducing use of multiple OR consitions*/
+
+select * from customer 
+where city 
+in ('Philadelphia','Seattle');
+
+/* Between is used to retrieve values in a given range*/
+select * from customer 
+where age 
+between 20 and 30;(Includes 20 and 30)
+
+/* between with not*/
+
+select * from customer
+where age 
+not between 20 and 30;
+
+
+/* between with dates */
+select * from sales 
+where ship_date 
+between '2015-04-01' and '2016-04-01';
+
+
+
+/*Like condition is used to perform pattern matching using wildcards
+% Allows you to match any string of any length
+_ allows you to  match single character
+
+eg 
+A%B means starting with A and endng with B
+AB_C means a string type ABVC or AB$C etc.*/
+
+select * from customer 
+where customer_name 
+like 'J%';(Names satrting with J)
+
+
+select * from customer 
+where customer_name 
+like '%Nelson%';(Where Nelson is a part of name)
+
+
+
+select * from customer 
+where customer_name 
+like '____ %';(Having 4 letters in first name)
+
+
+select distinct city from customer 
+where city 
+not like 'S%';(City not starting with S)
+
+
+select distinct city from customer 
+where city 
+not like 'S\%';(\ acts as escape character where % treated as % sign)

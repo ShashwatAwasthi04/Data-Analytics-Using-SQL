@@ -1,0 +1,10 @@
+select * from customer 
+where state='California' 
+order by customer_name;
+
+select * from customer 
+where state='California' 
+order by customer_name DESC;
+
+select * from customer 
+order by city desc,customer_name desc;(Multiple columns ordered);

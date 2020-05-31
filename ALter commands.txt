@@ -1,0 +1,14 @@
+alter table customer_table
+add testcolumn varchar;
+
+alter table customer_table
+drop testcolumn;
+
+alter table customer_table
+drop column testcolumn; /*Another method of doing*/
+
+alter table customer_table
+alter column age type varchar;/*Altering data type in column*/
+
+alter table customer_table 
+rename column email_id to email_address;/*Altering name of column*/

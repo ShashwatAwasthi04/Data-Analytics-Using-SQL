@@ -15,3 +15,9 @@ specified.
 criteria.
 ➢ Primary Key Constraint: Used to uniquely identify a row in the table.
 ➢ Foreign Key Constraint: Used to ensure referential integrity of the data.
+
+
+
+create table sales_2015 as select * from sales where ship_date between '2015-01-01' and '2015-12-31';
+
+create table cutomer_20_60 as select * from customer where age between 20 and 60;

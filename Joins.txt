@@ -1,0 +1,5 @@
+Joins are used to retrieve data from multiple tables at a time.
+5 types mainly
+
+Inner Join compares each row of table 1 with each row of table 2 to find rows which satisfy the join predicate.
+It is basically an intersection of joins

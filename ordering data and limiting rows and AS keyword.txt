@@ -1,0 +1,21 @@
+select * from customer 
+where state='California' 
+order by customer_name;
+
+select * from customer 
+where state='California' 
+order by customer_name DESC;
+
+select * from customer 
+order by city desc,customer_name desc;(Multiple columns ordered);
+
+
+/* Limiting number of rows in result */
+select * from customer where age>25 order by age desc limit 5;
+
+select * from customer where age>25 order by age asc limit 20;(top 20 records)
+
+
+select customer_id as "Serial Number" ,(If space between strings add in double quotations)
+customer_name as name,
+age as Customer_age from customer;(Important when we use joins)

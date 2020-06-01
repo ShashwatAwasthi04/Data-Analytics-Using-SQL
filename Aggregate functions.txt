@@ -1,0 +1,64 @@
+count function-
+
+select count(*) from sales;/*Total rows*/
+
+(Below function 1st count gives total nu,ber of products ordered and 2nd gives total number of orders laced)
+select count (order_line) as "Number of products ordered", 
+count (distinct order_id) as "Number of orders" 
+from sales 
+where customer_id='CG-12520'; 
+
+
+
+Sum function
+
+(Total profit earned)
+select sum (Profit) 
+as "Total Profit" 
+from sales;
+
+(Total units with specific product id)
+select sum(quantity) 
+as "Total units sold" 
+from sales 
+where product_id='FUR-TA-10000577';
+
+
+
+
+Average function
+
+
+(Average age of customer)
+select avg(age) 
+as "Average customer age" 
+from customer;
+
+
+(Average commission, See here we have also done a mathematical function as commission is 10% of sales)
+select avg(sales*0.10) 
+as "Total Commission" 
+from sales;
+
+
+
+
+MIN and MAX functions
+
+
+
+(Finding minimum sales in june)
+select min(sales) 
+as "Minimum sale value" 
+from sales 
+where order_date 
+between '2015-06-01' and '2015-06-30';
+
+
+
+(Maximum sale value)
+select max(sales) 
+as "Maximum sale value" 
+from sales 
+where order_date 
+between '2015-06-01' and '2015-06-30';

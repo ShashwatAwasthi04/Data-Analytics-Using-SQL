@@ -2,4 +2,80 @@ Joins are used to retrieve data from multiple tables at a time.
 5 types mainly
 
 Inner Join compares each row of table 1 with each row of table 2 to find rows which satisfy the join predicate.
-It is basically an intersection of joins
+It is basically an intersection of tables
+
+
+select a.order_line, a.product_id,a.customer_id,a.sales,b.customer_name,b.age
+from sales_2015 
+as a 
+inner join cutomer_20_60 as b 
+on a.customer_id = b.customer_id 
+order by customer_id;
+
+
+
+left join 
+Returns all rows from left table even if no match of it in other table
+select a.order_line, a.product_id,a.customer_id,a.sales,b.customer_name,b.age
+from sales_2015 
+as a 
+left join cutomer_20_60 as b 
+on a.customer_id = b.customer_id 
+order by customer_id;
+
+
+
+right join 
+Returns all rows from right table even if no match of it in other table
+select a.order_line, a.product_id,b.customer_id,a.sales,b.customer_name,b.age
+from sales_2015 
+as a 
+right join cutomer_20_60 as b 
+on a.customer_id = b.customer_id 
+order by customer_id;(Here customer id has been taken from table b as if from a, then customer with null sales will also come)
+
+
+
+Outer Join/Full Join
+Combines all the results
+
+
+select a.order_line, a.product_id,a.customer_id,a.sales,b.customer_name,b.age,b.customer_id
+from sales_2015 
+as a 
+full join cutomer_20_60 as b 
+on a.customer_id = b.customer_id 
+order by a.customer_id,b.customer_id;
+
+
+
+
+Cross Join
+Gives cartesian product between two data sets
+
+
+Except command
+
+Evaluates A-(A intersection B) removing parts of table 2 from 1
+
+select customer_id 
+from sales_2015 
+except 
+select customer_id 
+from cutomer_20_60 
+order by customer_id;
+
+
+Union Operator
+Union operator combines rsult set of two or more tables
+Also removes duplicate rows
+
+
+
+select customer_id 
+from sales_2015 
+union  
+select customer_id 
+from cutomer_20_60 
+order by customer_id;
+

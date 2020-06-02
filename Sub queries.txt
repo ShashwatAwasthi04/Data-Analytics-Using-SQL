@@ -1,0 +1,3 @@
+SYNTAX where subquery is in WHERE
+SELECT "column_name1" FROM "table_name1" WHERE 
+"column_name2" [Comparison Operator] (SELECT "column_name3" FROM "table_name2" WHERE "condition");

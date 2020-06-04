@@ -1,0 +1,95 @@
+String functions fro string in characters
+
+Length functions
+
+select customer_name, 
+length(customer_name) 
+as characters 
+from customer 
+where length(customer_name)>15;
+
+
+Upper and Lower changes the case of the letters in string
+
+select upper('Star Tech Academy');
+
+select lower('Star Tech Academy');
+
+Replace function used to replace a particular set of characters in string to other set
+(It is case sensitive function)
+(Upper lower functions used with this)
+
+select customer_name,
+country,
+replace(country,'United States','US') 
+as country_new
+from customer;
+
+
+
+TRIM LTRIM and RTRIM functions
+
+TRIM function removes from beginning ot from end or both sides
+LTRIM trims from left side
+RTRIM trims from right side
+
+SELECT trim(leading ' ' from ' Start-Tech Academy ');
+(Removing spaces from start)
+
+
+SELECT trim(trailing ' ' from ' Start-Tech Academy ');
+(Removing spaces from last)
+
+
+SELECT trim(both ' ' from ' Start-Tech Academy ');
+
+SELECT trim(' Start-Tech Academy ');
+
+SELECT rtrim(' Start-Tech Academy ', ' ');
+
+
+SELECT ltrim(' Start-Tech Academy ', ' ');
+
+
+Concatenation funtion
+
+|| operator used
+
+SELECT
+Customer_name,
+city|| ' , '||state|| ' , '||country AS address
+FROM customer;(Address of a customer)
+
+
+
+
+Substring function
+
+
+substring( string [from start_position] [for length] )
+
+select customer_id,
+customer_name,
+substring(customer_id for 2) as cust_group
+from customer where substring(customer_id for 2)='AB';(Getting first two letters of customerID)
+
+
+select customer_id,
+customer_name,
+substring(customer_id from 4 for 5) as cust_group
+from customer where substring(customer_id for 2)='AB';(Getting last 5 digits of customerID)
+
+
+
+List Aggregation
+Uses String Aggregator function it concatanates values using delimiter
+
+Difference between this and concat is that concat adds string in different columns, whereas string
+aggregator concatanates values in a column
+
+
+SELECT
+order_id ,
+STRING_AGG (product_id,',')
+FROM sales
+GROUP BY order_id;(Finding product ID associated with product ID)

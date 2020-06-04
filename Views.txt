@@ -1,0 +1,43 @@
+Views are not physical tables, but virtual tables created by a query joining two or more tables.
+Advantage of views-
+
+In the views,
+Since being virtual tables, they dont use space from our data base and
+while working with teams, views also help in showing a certain amount of data to others in the team,
+whereby hiding the whole data
+
+
+create view logistics 
+as 
+select
+a.order_line,
+a.order_id,
+b.customer_name,
+b.city,
+b.state,
+b.country
+from sales as a
+left join customer as b
+on a.customer_id=b.customer_id
+order by a.order_line;
+
+select * from logistics;
+
+
+
+We can also use Create or
+Replace view
+
+Advantage of this is that the views will be replaced with the new data
+
+
+
+to delete view- Use : drop view logistics
+
+
+to update view use:
+
+update logistics set country= US where country="United States";
+
+
+(Not advisable to update view as updating a view also updates the table)

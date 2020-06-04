@@ -1,0 +1,51 @@
+A subquery is a query within a query . 
+It can reside in select clause, where clause and form clause.
+
+
+Check in sales where customer age>60(In where clause)
+
+select * 
+from sales 
+where customer_id 
+in (In is comparison operator)
+(select distinct customer_id 
+from customer 
+where age>60);
+
+
+
+quantity of each product sold(in from clause)
+
+select a.product_id,
+a.product_name,
+a.category,
+b.quantity 
+from product 
+as a 
+left join(select product_id, 
+sum(quantity) 
+as quantity 
+from sales 
+group by product_id) 
+as b
+on a.product_id=b.product_id 
+order by b.quantity desc;
+
+
+
+(in select clause)
+select customer_id, order_line, 
+(select customer_name 
+from customer 
+where customer.customer_id=sales.customer_id)
+from sales
+order by customer_id;
+
+
+
+Rules for subqueries
+- Enclosed in paranthesis
+- Sub query can have only one column in it wherea main query can have 
+multiple columns
+- between cannot be used with a subquery but within the subquery
+- Order by cant be used in subquery

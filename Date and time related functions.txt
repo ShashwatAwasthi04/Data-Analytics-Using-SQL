@@ -1,0 +1,61 @@
+current_date function finds the current date'YYYY-MM-DD'
+
+current_time finds current time'HH:MM:SS'
+
+and current_timestamp gives the current date and time with time zone.
+
+select current_date ,
+current_time, 
+current_time(1), (Gives precise time upto 1 decimal place)
+current_timestamp;
+
+
+
+
+Getting the age using time difference function
+
+select age('2016-11-01','2014-01-01');(Getting age in months years and days)
+
+
+select 
+order_line,
+ship_date,
+order_date,
+age(ship_date,order_date) 
+as time_taken 
+from sales 
+order by time_taken;(Finding time between order date and ship date)
+
+
+
+
+
+
+Extract function hepls in extracting parts from a date
+
+
+
+day Day of the month (1 to 31)
+decade Year divided by 10
+doy Day of the year (1=first day of year, 365/366=last day of the year,
+depending if it is a leap year)
+epoch Number of seconds since '1970-01-01 00:00:00 UTC', if date value.
+Number of seconds in an interval, if interval value
+hour Hour (0 to 23)
+minute Minute (0 to 59)
+month Number for the month (1 to 12), if date value. Number of months
+(0 to 11), if interval value
+second Seconds (and fractional seconds)
+year Year as 4-digits
+
+
+
+Above are extract functions
+
+select extract(day from current_date);(Finding current day)
+
+select current_timestamp, extract(hour from current_time);
+
+
+select order_date, ship_date , extract(epoch from ship_date)-extract(epoch from order_date) from sales;
+(This finds seconds differnece)

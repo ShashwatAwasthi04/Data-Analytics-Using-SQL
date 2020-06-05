@@ -1,0 +1,83 @@
+Mathematical functions other than aggregate functions
+
+Ceil and Floor functions
+
+syntax- 
+ceil(number)
+
+floor(number)
+
+select order_line, 
+sales, 
+ceil(sales), 
+floor(sales) 
+from sales 
+where discount>0;
+
+________________________________________________________________
+
+Random function helps in generating a random nuber 
+in [0,1)
+
+If we want a random number between [a,b)
+select random()*(b-a)+a;
+
+
+select random ()*50+0;(Number in range 0 to 50)
+
+
+If we want a random integer in [a,b]
+
+select floor(random()*(b-a+1))+a;
+
+select floor(random()*40)+10;(Random integr between 10 and 50)
+
+
+
+
+
+
+
+if we Setseed by calling function, the random function will return a repetable sequence of 
+random nubers derived from seed
+
+select setseed(0.5);
+select random();
+
+select random();
+
+select setseed(0.5);
+
+select random();
+
+select random();
+
+(This helps in getting the same set of random values) The first random in both 
+cases will give the same values.
+
+
+
+
+Round function
+
+(Round function return a rounded off value to nearest integer)
+
+select order_line,
+sales, 
+round(sales)
+from sales 
+order by sales 
+desc;
+
+
+
+
+Power function
+
+
+Gives power value of m raised to power n in power(m,n)
+
+select age, 
+power(age,2) 
+from customer 
+order by age;

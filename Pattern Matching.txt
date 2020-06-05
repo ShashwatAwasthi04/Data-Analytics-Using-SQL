@@ -1,0 +1,17 @@
+It is a method to identify a string in a given pattern
+
+Three methods to do that
+
+LIKE statements
+
+SIMILAR TO statements(Every expression written in REGEX form)
+
+~(Regular Expressions/REGEX)
+
+
+Difference between Regular and Like is that like performs on whole string whereas 
+REGEX finds also on substrings
+
+
+Like we have already studied
+

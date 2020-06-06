@@ -11,3 +11,6 @@ insert into customer_table values
 copy customer_table from 'F:\PostgreSQL\Files\original.csv' delimiter ',' csv header;
 
 copy customer_table from 'F:\PostgreSQL\Files\original.txt' delimiter ',';
+
+
+Also look at resources
